@@ -1,0 +1,23 @@
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.rsconnect/
+
+# Figures (keep PDFs only)
+figures/*.png
+
+# Output (intermediate files)
+output/*.rds
+output/*.csv
+output/*.RData
+
+# OS
+.DS_Store
+__MACOSX/
+
+# Python
+__pycache__/
+*.pyc

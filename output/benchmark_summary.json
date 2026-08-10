@@ -1,0 +1,61 @@
+{
+  "pipeline_name": "AD Multi-Omics Pipeline v3",
+  "research_model": "iPSC Microglia Cohorts + Post-mortem Brain Tissues",
+  "framework": "Ziff et al. 2023 (ALS) + Scheidemantel et al. 2026 (AD)",
+  "databases_integrated": 39,
+  "figures_generated": 23,
+  "stages": 7,
+  "cross_system_benchmarks": {
+    "iPSC_vs_PM_concordance_r": 0.6,
+    "method": "Pearson correlation (log2FC of DDR/p53 genes)",
+    "datasets": "GSE163857 + ROSMAP RNA-seq (syn3388564)"
+  },
+  "pathway_benchmarks": {
+    "p53_GSEA_NES_PM": 6.2,
+    "p53_PROGENy_NES_iPSC": 3.2,
+    "TP53_target_genes_activated": 16,
+    "methods": "GSEA Hallmark (PM), decoupleR PROGENy (iPSC), DoRoTHEa v3 (PM)"
+  },
+  "splicing_benchmarks": {
+    "exon_skipping_pct": 34,
+    "intron_retention_pct": 25,
+    "other_events_pct": 41,
+    "threshold": "|deltaPSI| > 0.1, P < 0.05",
+    "tool": "MAJIQ v2.4"
+  },
+  "mutation_benchmarks": {
+    "mutation_burden_p_value": "P < 1e-4",
+    "method": "Poisson GLM (SNV/Indel burden ~ condition + covariates)",
+    "tools": "nf-core/rnavar (GATK) + STAR-Fusion"
+  },
+  "subgroup_analysis": {
+    "subgroups": [
+      "APOE4",
+      "TREM2",
+      "fAD",
+      "sAD"
+    ],
+    "cross_subgroup_correlation_r": 0.85,
+    "strongest_activation": "APOE4 and fAD subgroups (microglial activation)"
+  },
+  "key_biological_findings": [
+    "p53/DDR activation is the strongest cross-system signal (NES = 3.2 iPSC, 6.2 PM)",
+    "SPI1, CEBPB, TP53 identified as top activated TFs (DoRoTHEa v3)",
+    "Intron retention significantly increased in AD (consistent with TDP-43 pathology)",
+    "Somatic mutation burden and gene fusions elevated in AD microglia (P < 1e-4)",
+    "APOE4/fAD subgroups converge on shared downstream mechanisms (r = 0.85)"
+  ],
+  "validation_strategy": [
+    "Cross-cohort concordance (iPSC vs PM, r > 0.6)",
+    "Multi-omics convergence (MOFA+, 4 omics layers)",
+    "Ground truth benchmarking against published AD literature"
+  ],
+  "output_format": "23 publication-ready PDF figures + R Markdown report",
+  "data_sources_top": {
+    "ROSMAP_RNA_seq": "syn3388564 (~1,500 samples)",
+    "Johnson_TMT_proteomics": "syn17015098 (~1,000 samples)",
+    "Mathys_snRNA_seq": "GSE138852 (80,660 nuclei)",
+    "Green_snRNA_seq": "syn31512863 (2.3M nuclei)",
+    "iPSC_bulk_RNA": "GSE163857 + GSE327711 + NeuroLINCS"
+  }
+}
