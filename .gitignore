@@ -6,9 +6,6 @@
 *.Rproj
 .rsconnect/
 
-# Figures (keep PDFs only)
-figures/*.png
-
 # Output (intermediate files)
 output/*.rds
 output/*.csv
