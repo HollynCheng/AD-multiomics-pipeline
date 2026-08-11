@@ -1,8 +1,8 @@
-# 🧠 AD Multi-Omics Pipeline
+# 🧠 AD Transcriptomics Pipeline
 
-**Reproducible multi-omics integration pipeline for Alzheimer's disease — iPSC microglia + post-mortem brain tissue cross-system analysis.**
+**Reproducible transcriptomics integration pipeline for Alzheimer's disease — iPSC microglia + post-mortem brain tissue cross-system analysis.**
 
-Inspired by the Ziff et al. (2023) ALS framework and Scheidemantel et al. (2026) multi-omics integration strategy, this pipeline processes RNA-seq, splicing, mutation, and multi-omics data from iPSC-derived microglia cohorts and post-mortem brain tissues to generate 23 publication-ready figures.
+Inspired by the Ziff et al. (2023) ALS framework and Scheidemantel et al. (2026) transcriptomics integration strategy, this pipeline processes RNA-seq, splicing, mutation, and transcriptomics data from iPSC-derived microglia cohorts and post-mortem brain tissues to generate 23 publication-ready figures.
 
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![R](https://img.shields.io/badge/R-4.4%2B-blue?logo=r&logoColor=white)
